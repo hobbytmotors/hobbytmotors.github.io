@@ -1,0 +1,39 @@
+<article class="information">
+    <h1 class="heading">
+        Control electronics and software
+        <a id="btn-exit" class="btn-exit" href="" ng-click="returnToMainPage()" ng-controller="MainController">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" width="32px" height="32px" >
+                <g>
+                    <g id="x_x5F_alt">
+                        <path style="fill:#030104;" d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M23.914,21.086
+                            l-2.828,2.828L16,18.828l-5.086,5.086l-2.828-2.828L13.172,16l-5.086-5.086l2.828-2.828L16,13.172l5.086-5.086l2.828,2.828
+                            L18.828,16L23.914,21.086z"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+    </h1>
+
+    <p>
+        The control electronics can be split into two main components, of-the-shelf and project specific. Control over
+        the electric motor/generators is to be delegated to a specialized company and their products. The remainder of
+        the control electronics is to be built from scratch using an Arduino microprocessor and sensory. Project
+        specific control is required to monitor and operate throttle and brake inputs, variator ratio, speed and
+        combination of electric and petrol power. The control system is also going to feature a project specific
+        traction control system. Closely monitoring the driver inputs in the form of throttle position, steering angle
+        and vehicle speed we can vary the transmission ratio of each wheel in order to make the car steer better.
+        Slowing the rotational velocity of the inside wheels and increasing that of the outside ones, helps the vehicle
+        perform the arc of the corner desired by the driver. The control over the ratio of the variator transmissions is
+        applied through a couple of linear actuators on each axis. Furthermore, the distribution of power to and from
+        the onboard sources will be handled by the bespoke control algorithms in the microprocessor. Since the driver
+        only has one throttle pedal, but the motion is governed by two electric and one petrol engine, the distribution
+        of work between them depends on the control system under various driving conditions. Another task of the
+        microprocessor is to distribute the source of the electric power between the batteries and the flywheels also
+        driven by electric motor/generator. Under certain conditions the flywheel can be a power sink, while the
+        batteries are the source and vice versa.
+    </p>
+</article>
+<article class="information">
+    <img alt="control-diagram" src="img/diagrams/Control-and-electronick-diagram.png">
+</article>

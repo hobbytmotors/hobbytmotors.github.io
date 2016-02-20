@@ -1,0 +1,18 @@
+/* TEAM */
+	Chef:Lubomir Yanev
+	Email: l_yanev@abv.bg
+	From:Sofia, Bulgaria
+
+	Frontend Developer: Alexandra Chariyska
+	Email: alex.chariyska@gmail.com
+	From:Sofia, Bulgaria
+
+	Graphic Designer: Ludmila Ivanova
+	From:Sofia, Bulgaria
+
+/* SITE */
+	Last update: 2014/05/10
+	Language:  English 
+	Doctype: HTML5
+	Components: AngularJS
+	IDE: WebStorm 10, FileZilla, Photoshop

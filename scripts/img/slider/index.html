@@ -17,14 +17,14 @@
     </head>
 
     <body class="container-fluid" ng-app="hobbyt">
-        <div id="logo" class="logo">
+        <div class="logo">
             <img src="img/Logo_Hobbyt.png" alt="Logo-Hobbyt">
         </div>
         <!--Navigation / start-->
         <nav class="navbar-default" id="navigation" ng-controller="MainController">
             <div class="navbar-collapse"><span class="btn-collapse"></span></div>
             <ul id="nav-list" class="nav container nav-slideUp">
-                <li class="active"><a href="" ng-click="scrollTo('logo')">Home</a>
+                <li class="active"><a href="#main-view" ng-click="scrollTo('slider')">Home</a>
                 </li>
                 <li><a href="" ng-click="scrollTo('systems')">Systems</a>
                 </li>
@@ -59,7 +59,7 @@
         <!-- Slider / end-->
         <!-- Container - ng-view / start-->
         <div class="content">
-            <div ng-view ng-class="{slide: mainVisitedOnce }"></div>
+            <div ng-view class="slide"></div>
         </div>
         <!-- Container - ng-view / end-->
 
@@ -78,9 +78,9 @@
 
         <!--Scripts-->
         <script src="scripts/lib/angular.min.js"></script>
+        <script src="scripts/lib/angular-animate.min.js"></script>
         <script src="scripts/lib/angular-route.min.js"></script>
         <script src="scripts/lib/angular-resource.min.js"></script>
-        <script src="scripts/lib/angular-animate.min.js"></script>
         <script src="scripts/js/app.js"></script>
     </body>
 </html>

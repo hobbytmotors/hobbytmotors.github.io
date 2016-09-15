@@ -395,7 +395,7 @@
         <h1 class="heading">Contact us</h1>
 
         <div class="row">
-            <form name="contactForm" method="post" action="scripts-min/php/contact-form.php" novalidate>
+            <form id="contact-form" name="contactForm" method="post" ng-controller="MainController" novalidate>
                 <div class="error">
                     <div class="error_message" ng-if="contactForm.name.$dirty && contactForm.name.$error.required">
                         Please insert your name.
@@ -413,7 +413,7 @@
                     <input type="text" name="name" id="name" placeholder="Your Name*" ng-model="user.name" required>
                     <input type="text" name="email" id="email" placeholder="Your E-mail*" ng-model="user.email"
                            ng-pattern="/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/" required>
-                    <input type="text" name="subject" placeholder="Subject" ng-model="user.subject">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" ng-model="user.subject">
                 </fieldset>
 
                 <fieldset class="fieldsets">
@@ -422,7 +422,7 @@
                 </fieldset>
 
                 <fieldset class="fieldsets__button">
-                    <button type="submit" name="submit" ng-disabled="contactForm.$invalid" ng-click=""
+                    <button type="submit" name="submit" ng-disabled="contactForm.$invalid" ng-click="sendForm()"
                             class="default-btn">Send Message
                     </button>
                 </fieldset>

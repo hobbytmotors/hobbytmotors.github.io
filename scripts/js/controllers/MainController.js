@@ -96,4 +96,87 @@ app.controller('MainController', function($scope, $timeout, $location, $anchorSc
         }
     }
 
+    var contactForm = document.getElementById("contact-form");
+
+    $scope.sendForm = function() {
+        $scope._crateContactFormMessageContainer();
+        $scope._sendMailWithFormspree();
+        return false;
+    };
+
+
+    /**
+     * Send mail through Formspee API.
+     * @private
+     * @returns {undefined}
+     */
+    $scope._sendMailWithFormspree = function() {
+        var url = 'https://formspree.io/l_yanev@abv.bg';
+        var xhttp = new XMLHttpRequest();
+        var messageData = {
+            subject: document.getElementById("subject").value,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        };
+
+
+        xhttp.open('POST', url, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+
+        xhttp.addEventListener('load', $scope._formLoadHandler.bind(this, xhttp), false);
+        xhttp.addEventListener('error', $scope._formErrorHandler.bind(this), false);
+
+        xhttp.send(JSON.stringify(messageData));
+    };
+
+
+    /**
+     * Load event handler.
+     * @param {object} xhttp - XMLHttpRequest object.
+     * @private
+     * @returns {undefined}
+     */
+    $scope._formLoadHandler = function(xhttp) {
+        this._contactFormMessageContainer.innerText = 'The message was send successful.';
+    };
+
+    /**
+     * Error event handler.
+     * @private
+     * @returns {undefined}
+     */
+    $scope._formErrorHandler = function() {
+        this._contactFormMessageContainer.innerText = 'Something went wrong, please try again later.';
+    };
+
+    /**
+     * Submit event handler.
+     * @param {Object} event - Submit event
+     * @private
+     * @returns {undefined}
+     */
+    $scope._formSubmitHandler = function(event) {
+        event.preventDefault();
+
+        if (this.isFormValid(this._contactForm)) {
+            this._sendMailWithFormspree();
+        }
+    };
+
+    /**
+    * Creates field for response 
+    * @private
+    */
+    $scope._crateContactFormMessageContainer = function() {
+        var messageContainer = document.createElement('p');
+
+        messageContainer.setAttribute('data-contact-form', 'message');
+        messageContainer.classList.add('message-form-response')
+        contactForm.appendChild(messageContainer);
+
+        $scope._contactFormMessageContainer = messageContainer;
+    };
+
+
 });
